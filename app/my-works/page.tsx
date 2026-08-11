@@ -61,7 +61,7 @@ const MyWorks: NextPage = ({}) => {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`font-[Inter] text-[14px] md:text-[15px] rounded-full px-4 py-1.5 border cursor-pointer transition-colors duration-300 ${
+              className={`text-[14px] md:text-[15px] rounded-full px-4 py-1.5 border cursor-pointer transition-colors duration-300 ${
                 activeFilter === filter
                   ? "bg-[color:var(--color-primary-color)] border-[color:var(--color-primary-color)] text-white"
                   : "border-gray-300 text-gray-600 hover:border-gray-400 hover:text-black"
