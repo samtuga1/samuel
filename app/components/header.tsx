@@ -97,7 +97,7 @@ const Header: NextPage = ({}) => {
           <motion.span
             animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 3.75 : 0 }}
             transition={{ duration: 0.3 }}
-            className="block w-[21px] h-[1.5px] bg-current origin-center"
+            className="block w-[21px] h-[1.8px] bg-current origin-center"
           />
           <motion.span
             animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -3.75 : 0 }}
