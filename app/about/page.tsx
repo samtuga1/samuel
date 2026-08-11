@@ -43,7 +43,7 @@ const About: NextPage = ({}) => {
         <div className="flex flex-col gap-5">
           <div className="flex flex-col">
             <span className="font-normal md:font-medium text-3xl md:w-[400px] md:text-4xl">
-              Hey, I'm Samuel Twumasi
+              Hey, I'm Samuel
             </span>
             <span className="font-normal md:font-medium text-3xl md:w-[400px] md:text-4xl">
               Software Engineer
