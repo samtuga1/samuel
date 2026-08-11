@@ -97,7 +97,7 @@ const MyWorks: NextPage = ({}) => {
                     layout: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
                   }}
                   whileHover={project.url == null ? undefined : { scale: 0.97 }}
-                  className={`gap-3 flex flex-col pb-5 ${
+                  className={`gap-3 flex flex-col pb-5 w-full md:w-auto ${
                     project.url == null
                       ? "cursor-not-allowed"
                       : "cursor-pointer"

@@ -44,31 +44,6 @@ const Header: NextPage = ({}) => {
   // close the menu whenever navigation actually happens
   useEffect(() => setMenuOpen(false), [pathname]);
 
-  // freeze the page behind the open menu. iOS Safari ignores overflow:hidden on
-  // the body, so pin it in place instead and restore the scroll position after
-  useEffect(() => {
-    if (!menuOpen) return;
-
-    const { body } = document;
-    const scrollY = window.scrollY;
-    const previous = {
-      position: body.style.position,
-      top: body.style.top,
-      width: body.style.width,
-      overflow: body.style.overflow,
-    };
-
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
-    body.style.overflow = "hidden";
-
-    return () => {
-      Object.assign(body.style, previous);
-      window.scrollTo(0, scrollY);
-    };
-  }, [menuOpen]);
-
   return (
     <header
       className={`w-full fixed transition-all flex items-center justify-between flex-row px-5 md:px-25 lg:px-70 z-50 ${
