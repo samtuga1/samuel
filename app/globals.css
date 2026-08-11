@@ -1,0 +1,74 @@
+@font-face {
+  font-family: Inter;
+  src: url("./assets/fonts/inter/Inter-Regular.ttf");
+}
+
+@font-face {
+  font-family: Gambarino;
+  src: url("./assets/fonts/Gambarino/Gambarino-Regular.otf");
+}
+
+@import "tailwindcss";
+/* @plugin ["@eioluseyi/tailwind-fade"]; */
+
+@layer base {
+  header {
+    span {
+      @apply hover:text-[color:var(--color-primary-color)] cursor-pointer transition-all active:text-[color:var(--color-primary-color)];
+    }
+  }
+}
+
+@theme {
+  --font-primary: Gambarino, "sans-serif";
+  --font-secondary: Inter, "sans-serif";
+  --color-scaffold-color: #f3f3ec;
+  --color-primary-color: #0144e4;
+}
+
+@layer components {
+}
+
+@font-face {
+  font-family: "SignatureFont";
+  src: url("./assets/fonts/Dalton-white/dalton-white.otf") format("truetype");
+}
+
+@layer utilities {
+  .scrollbar-hidden {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .blur-effect-theme {
+    @apply bg-white/50 bg-clip-padding backdrop-filter backdrop-blur opacity-100 z-[100] transition-all duration-300;
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .signature-stroke {
+    @apply fill-none stroke-black stroke-[1];
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Gambarino;
+  background-color: #f3f3ec;
+}
