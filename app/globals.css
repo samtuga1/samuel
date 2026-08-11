@@ -23,7 +23,8 @@
   --font-primary: Gambarino, "sans-serif";
   --font-secondary: Inter, "sans-serif";
   --color-scaffold-color: #f3f3ec;
-  --color-primary-color: #0144e4;
+  /* --color-primary-color: #0144e4; */
+  --color-primary-color: #f97f2d;
 }
 
 @layer components {
