@@ -14,7 +14,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      {/* extensions such as Grammarly inject attributes here before React
+          hydrates, which otherwise reads as a mismatch */}
+      <body suppressHydrationWarning>
         <Header />
         <main className="pt-[80px]">
           <AnimatePresence mode="wait" initial={false}>

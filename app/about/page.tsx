@@ -2,7 +2,7 @@
 "use client";
 
 import { NextPage } from "next";
-import SamuelImage from "../assets/images/me.jpg";
+// import SamuelImage from "../assets/images/me.jpg";
 import UrbanBlu from "../assets/images/urban-blu.svg";
 import Safelynk from "../assets/images/safelynk.svg";
 import Viibre from "../assets/images/viibre.svg";
@@ -13,6 +13,8 @@ import Hanypay from "../assets/images/hanypay.svg";
 import Signature from "../assets/images/samuel-sign.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Navii } from "@usenavii/react";
+import { useMediaQuery } from "@/hooks/media-query-hook";
 // import { useOnScreen } from "@/hooks/visible-hook";
 // import Signature from "../components/signature";
 
@@ -25,6 +27,10 @@ const half = [...logos, ...logos];
 const About: NextPage = ({}) => {
   // const [ref, visible] = useOnScreen();
 
+  // Navii takes a numeric size rather than CSS, so the md: breakpoint has to be
+  // read in JS to match the rest of the layout
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -33,12 +39,20 @@ const About: NextPage = ({}) => {
       transition={{ duration: 0.4 }}
     >
       <div className="px-5 pt-10 flex flex-col gap-2 md:px-25 lg:px-70 transition-all">
-        <Image
+        {/* <Image
           className="w-[97px] h-[97px] object-cover object-top rounded-4xl md:w-[130px] md:h-[130px] transition-all"
           src={SamuelImage.src}
           alt="Samuel.png"
           width={SamuelImage.width}
           height={SamuelImage.height}
+        /> */}
+        <Navii
+          seed={"2"}
+          size={isDesktop ? 120 : 97}
+          title={"Odi"}
+          animated
+          className="mb-3 md:mb-4"
+          background={"ring"}
         />
         <div className="flex flex-col gap-5">
           <div className="flex flex-col">
